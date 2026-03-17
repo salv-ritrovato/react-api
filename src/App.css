@@ -10,7 +10,7 @@
 
 .card-img-top {
     background-color: #1e1e1e;
-    height: 60% !important;
+    height: 50% !important;
     width: 100% !important;
     object-fit: cover;
 
@@ -20,6 +20,12 @@
     background: #1e1e1e;
     color: #e0e0e0;
 }
+
+.actors {
+    color: #e0e0e0;;
+}
+
+/* FOOTER */
 
 footer {
     background-color: #f5c518;
