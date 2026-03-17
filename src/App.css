@@ -1,0 +1,27 @@
+/* HEADER */
+.navbar {
+    background-color: #f5c518;
+}
+
+/* MAIN */
+.card {
+    border: 1px solid #f5c518;
+}
+
+.card-img-top {
+    background-color: #1e1e1e;
+    height: 60% !important;
+    width: 100% !important;
+    object-fit: cover;
+
+}
+
+.card-body {
+    background: #1e1e1e;
+    color: #e0e0e0;
+}
+
+footer {
+    background-color: #f5c518;
+    color: black;
+}

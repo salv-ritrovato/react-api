@@ -20,31 +20,35 @@ export default function AppMain() {
         /* Assigning my data to my state variable */
         setActors(res.data);
       })
+      .catch((err) => {
+        console.error("Error fetching actors:", err);
+      });
   }
 
+  /* Fetching actors on component mount phase */
   useEffect(() => {
     getActors(actors)
   }, [])
-
 
   return (
     <>
       <main>
         <section>
-          <div className="container">
-            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+          <div className="container mt-3">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-2">
               {/* Rendering my cards through the map method */}
               {actors.map((actor) =>
                 <div className="col" key={actor.id}>
-                  <div className="card">
-                    <img className="card-img-top" src={actor.image} alt={actor.name} />
+                  <div className="card h-100">
+                    <img className="card-img-top p-3" src={actor.image} alt={actor.name} />
                     <div className="card-body">
-                      <p><strong>Nome:</strong> {actor.name}</p>
-                      <p><strong>Anno di Nascita:</strong> {actor.birth_year}</p>
-                      <p><strong>Nazionalità:</strong> {actor.nationality}</p>
+                      <h3 className="card-title mb-3">{actor.name}</h3>
+                      <p className='mb-0'><strong>Anno di Nascita:</strong> {actor.birth_year}</p>
+                      <p className='mb-0'><strong>Nazionalità:</strong> {actor.nationality}</p>
                       <p><strong>Biografia:</strong> {actor.biography}</p>
-                      <p><strong>Riconoscimenti:</strong> {actor.awards}</p>
-                      <p><strong>Conosciuto per:</strong> {actor.known_for}</p>
+                      {/* Using join method to add a "," inbetween words (they were not split!) */}
+                      <p className='mb-0'><strong>Riconoscimenti:</strong> {actor.awards.join(', ')}</p>
+                      <p className='mb-0'><strong>Conosciuto per:</strong> {actor.known_for.join(', ')}</p>
                     </div>
                   </div>
                 </div>
@@ -52,7 +56,7 @@ export default function AppMain() {
             </div>
           </div>
         </section>
-      </main >
+      </main>
     </>
   )
 }

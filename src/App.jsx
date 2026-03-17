@@ -7,7 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 /* Importing Axios for my API calls */
-import axios from 'axios';
+import axios from 'axios'; 
+/* Importing custom CSS */
+import './App.css'
 
 function App() {
 
