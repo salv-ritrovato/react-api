@@ -22,12 +22,37 @@ export default function AppMain() {
       })
   }
 
+  useEffect(() => {
+    getActors(actors)
+  }, [])
+
 
   return (
-    <main>
-      <button onClick={getActors}>Attori</button>
-    </main>
+    <>
+      <main>
+        <section>
+          <div className="container">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+              {/* Rendering my cards through the map method */}
+              {actors.map((actor) =>
+                <div className="col" key={actor.id}>
+                  <div className="card">
+                    <img className="card-img-top" src={actor.image} alt={actor.name} />
+                    <div className="card-body">
+                      <p><strong>Nome:</strong> {actor.name}</p>
+                      <p><strong>Anno di Nascita:</strong> {actor.birth_year}</p>
+                      <p><strong>Nazionalità:</strong> {actor.nationality}</p>
+                      <p><strong>Biografia:</strong> {actor.biography}</p>
+                      <p><strong>Riconoscimenti:</strong> {actor.awards}</p>
+                      <p><strong>Conosciuto per:</strong> {actor.known_for}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      </main >
+    </>
   )
-
-
 }
