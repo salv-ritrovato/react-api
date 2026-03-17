@@ -2,6 +2,7 @@
 import AppFooter from './components/AppFooter';
 import AppHeader from './components/AppHeader';
 import AppMain from './components/AppMain';
+import JoinedFetch from './components/JoinedFetch';
 /* Importing Bootstrap package for style, icons and JS */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -17,7 +18,8 @@ function App() {
   return (
     <>
       <AppHeader />
-      <AppMain />
+      {/* <AppMain /> */}
+      <JoinedFetch/>
       <AppFooter />
     </>
   )

@@ -99,8 +99,6 @@ export default function AppMain() {
                 </div>
               )}
             </div>
-
-
           </div>
         </section>
       </main>
